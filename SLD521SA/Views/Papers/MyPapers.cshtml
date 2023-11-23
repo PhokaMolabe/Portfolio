@@ -1,0 +1,75 @@
+﻿@model IEnumerable<SLD521SA.Models.Paper>
+
+@{
+    ViewBag.Title = "My Papers";
+}
+
+<h2><b>@ViewBag.Title</b></h2>
+@{ if (@ViewBag.Message != "")
+    {
+    <div id="message" class="row"><div class="col-md-10" style="text-align: left;">@ViewBag.Message</div><div class="col-md-2" style="text-align: right;" onclick="invis()">x</div></div>
+    } }
+<p>
+    <a style="color: dodgerblue;" href="@Url.Action("Submit","Papers")">Submit New Paper</a>
+</p>
+<table class="table" id="table1">
+    <tr>
+        <th class="col-md-1">
+            ID
+        </th>
+        <th class="col-md-8">
+            Title
+        </th>
+        <th class="col-md-2">
+            Submission date
+        </th>
+        <th class="col-md-2">
+            Topic
+        </th>
+        <th class="col-md-6"></th>
+        <th class="col-md-6"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaperId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaperTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaperDateSubmitted.ToString().Split(' ')[0])
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Topic.TopicName)
+            </td>
+            <td>
+                <div class="btn btn-default" id="edit" style="background-color: orange;">
+                    <a style="color: black;" href="@Url.Action("Edit","Papers", new {id = item.PaperId })">Edit</a>
+                </div>
+            </td>
+            <td>
+                <div class="btn btn-default" id="delete" style="background-color: red;">
+                    <a style="color: white;" href="@Url.Action("Delete","Papers", new {id = item.PaperId })" onclick="return confirm('Are you sure you want to delete this?');">Delete</a>
+                </div>
+            </td>
+        </tr>
+    }
+</table>
+
+
+<script>
+    var message = document.getElementById("message");
+    if (message.innerText != "") {
+        message.className = "btn btn-defualt col-md-12";
+        message.style.color = "black";
+        message.style.backgroundColor = "cyan";
+        message.style.padding = "20px 10px 20px 10px";
+        message.style.display = "visible";
+    }
+    function invis() {
+        message.style.display = "none";
+    }
+</script>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sld521_saModelStoreContainer" CdmEntityContainer="sld521_saEntities">
+    <EntitySetMapping Name="Papers">
+      <EntityTypeMapping TypeName="sld521_saModel.Paper">
+        <MappingFragment StoreEntitySet="Paper">
+          <ScalarProperty Name="PaperId" ColumnName="PaperId" />
+          <ScalarProperty Name="PaperTitle" ColumnName="PaperTitle" />
+          <ScalarProperty Name="PaperAbstract" ColumnName="PaperAbstract" />
+          <ScalarProperty Name="PaperAuthor" ColumnName="PaperAuthor" />
+          <ScalarProperty Name="PaperDateSubmitted" ColumnName="PaperDateSubmitted" />
+          <ScalarProperty Name="TopicId" ColumnName="TopicId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Topics">
+      <EntityTypeMapping TypeName="sld521_saModel.Topic">
+        <MappingFragment StoreEntitySet="Topic">
+          <ScalarProperty Name="TopicId" ColumnName="TopicId" />
+          <ScalarProperty Name="TopicName" ColumnName="TopicName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

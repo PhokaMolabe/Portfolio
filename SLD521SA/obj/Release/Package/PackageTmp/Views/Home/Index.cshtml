@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>SACLA Conference Paper Management System</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-4" id="index1">
+        <h2>Welcome to SACLA</h2>
+        <p>
+            This is a sample application that was created for assessment purposes as part of the CSIS3734/CSIQ3734 module. All rights reserved.
+        </p>
+    </div>
+    <div class="col-md-4" id="index2">
+        <h2>News</h2>
+        <p>Visit our News page to find out what is happening.</p>
+        <p><a class="btn btn-default" style="background-color: darkgray; color: white;" href="@Url.Action("News","Home")">See latest news &raquo;</a></p>
+    </div>
+    <div class="col-md-4" id="index3">
+        <h2>Contact us</h2>
+        <p>Give us a call or drop us an email to find out more about upcoming conferences and workshops.</p>
+        <p><a class="btn btn-default" style="background-color: darkgray; color: white;" href="@Url.Action("Contact","Home")">See contact details &raquo;</a></p>
+    </div>
+</div>

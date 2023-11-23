@@ -1,0 +1,63 @@
+﻿@model SLD521SA.Models.Paper
+
+@{
+    ViewBag.Title = "Submit New Paper";
+
+}
+
+<h2><b>@ViewBag.Title</b></h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Paper</h4>
+    <hr />
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.PaperTitle, "Title", htmlAttributes: new { @class = "control-label" })
+        <div>
+            @Html.EditorFor(model => model.PaperTitle, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PaperAbstract, "Abstract", htmlAttributes: new { @class = "control-label" })
+        <div>
+            @Html.EditorFor(model => model.PaperAbstract, new { htmlAttributes = new { @class = "form-control", @Style = "height: 250px;" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TopicId, "Topic", htmlAttributes: new { @class = "control-label" })
+        <div>
+            @Html.DropDownList("TopicId", null, "-- Select Topic --", htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @* Set Author Equals to current user *@
+        @Html.EditorFor(model => model.PaperAuthor, new { htmlAttributes = new { @class = "form-control", @Value = User.Identity.Name, @Style = "display:none;" } })
+    </div>
+    <div class="form-group">
+        @* Set Current Date *@
+        @Html.EditorFor(model => model.PaperDateSubmitted, new { htmlAttributes = new { @class = "form-control", @Value = DateTime.Now.ToString().Split(' ')[0], @Style = "display:none;" } })
+    </div>
+    <div class="form-group">
+        <div>
+            <input type="submit" value="Submit" class="btn btn-default" style="color: white; background-color:dodgerblue;" />
+            <div class="btn btn-default">
+                @Html.ActionLink("Back to List", "MyPapers")
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

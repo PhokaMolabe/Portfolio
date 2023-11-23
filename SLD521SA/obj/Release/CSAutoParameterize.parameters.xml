@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=sld521saeben.database.windows.net;Initial Catalog=sld521_sa;User ID=eben;Password=Vosloo!2001;Connect Timeout=60;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\dejon\\Desktop\\SLD521\ SA\\SLD521SA\\SLD521SA\\SLD521SA\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="sld521_saEntities-Web.config Connection String" description="sld521_saEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.PaperTopicModel.csdl|res://*/Models.PaperTopicModel.ssdl|res://*/Models.PaperTopicModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=sld521saeben.database.windows.net;initial catalog=sld521_sa;persist security info=True;user id=eben;password=Vosloo!2001;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\dejon\\Desktop\\SLD521\ SA\\SLD521SA\\SLD521SA\\SLD521SA\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='sld521_saEntities']/@connectionString" />
+  </parameter>
+</parameters>

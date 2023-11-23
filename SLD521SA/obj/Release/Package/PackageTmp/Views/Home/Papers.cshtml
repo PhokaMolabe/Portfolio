@@ -1,0 +1,38 @@
+﻿@model IEnumerable<SLD521SA.Models.Paper>
+
+@{
+    ViewBag.Title = "Submitted Papers";
+}
+
+<h2><b>@ViewBag.Title</b></h2>
+
+<table class="table table-bordered" id="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th class="col-md-11">
+            Title
+        </th>
+        <th class="col-md-1">
+            Author
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaperId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaperTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaperAuthor)
+            </td>
+        </tr>
+    }
+
+</table>
+
